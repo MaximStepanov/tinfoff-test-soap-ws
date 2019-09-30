@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://testsoap.tinkoff.stepanov.com/ws">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ws:getResultRequest>
+            <ws:number>212412421</ws:number>
+        </ws:getResultRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

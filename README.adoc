@@ -1,0 +1,24 @@
+# Task: SOAP Webservice
+
+"Виздл" - http://localhost:8087/ws/results.wsdl
+На его основе можно создать проект в SoapUI и начать тестировать.
+
+Код для генерации текстовых файлов находится в классе FileService
+в методе generateRandomNumbersTextFiles(final int amountOfNumbersInEachFile).
+Для генерации 20 текстовых файлов нужно запустить main метод внутри TextFilesGenerator класса.
+Внутри метода генерации стоит проверка что файлы уже есть.
+
+In-memory H2 база в действии
+Измените application.properties чтобы натсроить подключение к собственной БД
+Либо перейдите по урлу (когда приложение запущено) http://localhost:8087/h2-console
+Укажите в полях значения соответствующие тем, что указаны в application.property
+
+Код для создания таблицы руками:
+----
+CREATE TABLE result (
+     id NUMBER(*,0) NOT NULL PRIMARY KEY,
+     code VARCHAR2(50 BYTE) NOT NULL,
+     number NUMBER(*,0) NOT NULL,
+     file_names VARCHAR2(100 BYTE),
+     error VARCHAR2(100 BYTE)
+);
