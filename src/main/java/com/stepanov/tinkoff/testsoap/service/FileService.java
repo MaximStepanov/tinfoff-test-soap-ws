@@ -62,7 +62,8 @@ public class FileService {
    * @throws FileServiceException - throws if any exception occurs during the file processing
    */
   private String findInSpecifiedFile(final String fileName, final int number) throws FileServiceException {
-    try (final BufferedReader reader = new BufferedReader(new FileReader(TEXT_FILES_SOURCE + fileName))) {
+    try (final FileReader fileReader = new FileReader(TEXT_FILES_SOURCE + fileName);
+        final BufferedReader reader = new BufferedReader(fileReader)) {
       final StreamTokenizer tokenizer = new StreamTokenizer(reader);
       while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
         final int currentNumber = (int) tokenizer.nval;
